@@ -13,9 +13,9 @@ The roadmap focuses on:
 
 ---
 
-# Why This Roadmap Works
+# Why I built this road map
 
-Companies hire Machine Learning Engineers based on evidence of engineering capability, not certificates.
+I aim to prove that companies hire Machine Learning Engineers based on evidence of engineering capability, not certificates.
 
 This roadmap produces that evidence through:
 
@@ -24,6 +24,7 @@ This roadmap produces that evidence through:
 3. Collaboration
 4. Technical writing
 5. System design
+6. Being hired by one of you because of my work and knowledge :)
 
 ---
 
