@@ -114,7 +114,7 @@ Examples:
 • faces  
 • cars  
 • houses  
-• charts (this might align well with your trading focus later)  
+• charts 
 
 Store in:
 
@@ -282,7 +282,7 @@ README.md should include:
 
 Title:
 
-Building My First AI Image System (Without Using AI Models)
+Building My First AI Image System
 
 Content outline:
 
