@@ -1,15 +1,15 @@
-# 26-Week Machine Learning Engineer Portfolio Roadmap
+# 10-Week Machine Learning Engineer Portfolio Roadmap
 
-A structured roadmap to build a Machine Learning Engineer (MLE – Machine Learning Engineer) portfolio in 26 weeks.
+A structured roadmap to build a Machine Learning Engineer (MLE – Machine Learning Engineer) portfolio in 10 weeks.
 
 The roadmap focuses on:
 
 • Independent machine learning projects  
-• Collaboration (Kaggle – Data Science Competition Platform, GitHub – Git Repository Hosting Platform)  
-• Weekly blog posts  
-• Weekly LinkedIn updates  
+• Collaboration (Kaggle – Data Science Competition Platform, GitHub – Git Repository Hosting Platform)   
+• Weekly LinkedIn updates
+• Posts to this repository as an progress update (with pictures)
 • A web-based machine learning trading system  
-• VS Code (Visual Studio Code – Integrated Development Environment) as the primary IDE  
+ 
 
 ---
 
@@ -23,34 +23,8 @@ This roadmap produces that evidence through:
 2. Public code repositories
 3. Collaboration
 4. Technical writing
-5. System design
-6. Being hired by one of you because of my work and knowledge :)
+5. Documentation of System designs
 
----
-
-# Recommended Repository Structure
-
-Create a GitHub repository called:
-
-ml-engineering-portfolio
-
-Recommended structure:
-
-ml-engineering-portfolio
-│
-├── projects
-│   ├── 01-data-analysis
-│   ├── 02-baseline-model
-│   ├── 03-feature-engineering
-│   ├── 04-kaggle-project
-│   ├── 05-ml-pipeline
-│   ├── 06-time-series-model
-│   └── 07-ml-trading-system
-│
-├── blog_posts
-├── experiments
-├── datasets
-└── README.md
 
 ---
 
@@ -60,7 +34,7 @@ Primary IDE:
 
 VS Code – Visual Studio Code (Integrated Development Environment)
 
-Recommended extensions:
+extensions:
 
 Python Extension  
 Jupyter Notebook Extension  
@@ -79,7 +53,7 @@ pip install requests
 
 ---
 
-# Phase 0 — Environment Setup (Week 1)
+# Phase 0 — AI Image Generator (Week 1)
 
 Goal: Prepare a professional development environment.
 
@@ -123,17 +97,20 @@ Deliverables:
 
 ---
 
-# Phase 1 — Data Exploration (Weeks 2–4)
+# Phase 1 — Long Term Stock Data Visualizer (Weeks 2)
+
+This one just needs a little bit of work because I already 
+designed most of it.
 
 Goal: Demonstrate data literacy.
 
-Download datasets from Kaggle.
+Download stock market datasets from yfinance.
 
 Example datasets:
-
-• housing price prediction  
-• customer churn  
-• stock market history  
+  
+• daily stock market history 
+• custom produced momentum indicators  
+• buy/sell indications
 
 Load dataset with Pandas.
 
@@ -174,7 +151,7 @@ LinkedIn update summarizing results.
 
 ---
 
-# Phase 2 — Baseline Machine Learning Model (Weeks 5–7)
+# Phase 2 — Baseline Machine Learning Model (Weeks 3)
 
 Goal: Build your first predictive model.
 
@@ -205,6 +182,24 @@ model.fit(X_train, y_train)
 
 predictions = model.predict(X_test)
 
+### Docker Integration (Introduction)
+
+Create your first Docker container for this project.
+
+Tasks:
+
+• Write a `Dockerfile` that installs Python and required libraries  
+• Copy your project code into the container  
+• Define a command to run your training script automatically  
+• Build the container using: `docker build -t ml-model .`  
+• Run the container using: `docker run ml-model`  
+
+Purpose:
+
+• Ensures your model runs consistently across environments  
+• Introduces containerization early without complexity  
+• Demonstrates reproducibility — a key MLE skill  
+
 Deliverables:
 
 projects/02-baseline-model
@@ -217,7 +212,7 @@ LinkedIn summary.
 
 ---
 
-# Phase 3 — Feature Engineering (Weeks 8–10)
+# Phase 3 — Feature Engineering (Weeks 4-5)
 
 Goal: Improve model performance.
 
@@ -249,7 +244,7 @@ Feature Engineering for Better Machine Learning Models
 
 ---
 
-# Phase 4 — Kaggle Collaboration (Weeks 11–13)
+# Phase 4 — Kaggle Collaboration (Weeks 6-7)
 
 Goal: Gain collaborative experience.
 
@@ -271,7 +266,7 @@ What I Learned from My First Kaggle Competition
 
 ---
 
-# Phase 5 — Open Source Contribution (Weeks 14–16)
+# Phase 5 — Open Source Contribution (Weeks 7-8)
 
 Goal: Demonstrate collaboration with developers.
 
@@ -299,19 +294,9 @@ My First Open Source Contribution
 
 ---
 
-# Phase 6 — Machine Learning Pipeline (Weeks 17–19)
+# Phase 6 — Machine Learning Pipeline (Weeks 8)
 
 Goal: Learn production ML architecture.
-
-Example project structure:
-
-ml_project
-│
-├── data
-├── preprocessing
-├── models
-├── evaluation
-└── pipeline
 
 Pipeline steps:
 
@@ -320,6 +305,42 @@ Pipeline steps:
 3. Feature generation
 4. Model training
 5. Evaluation
+
+### Docker Integration (Core Usage)
+
+Break your pipeline into containerized components.
+
+Tasks:
+
+• Create separate Docker containers for each pipeline stage  
+  - ingestion container  
+  - preprocessing container  
+  - training container  
+• Use `docker-compose` to orchestrate multi-container execution  
+• Define clear inputs/outputs between containers (files or APIs)  
+
+Purpose:
+
+• Simulates real-world ML systems  
+• Demonstrates modular architecture  
+• Shows ability to scale and isolate components  
+
+### AWS Integration (Introduction)
+
+Introduce cloud storage into your pipeline.
+
+Tasks:
+
+• Create an S3 (Simple Storage Service) bucket  
+• Upload datasets to S3  
+• Modify your pipeline to pull data from S3 instead of local files  
+• Optionally push trained models back to S3  
+
+Purpose:
+
+• Separates compute from storage  
+• Introduces cloud-native workflows  
+• Demonstrates handling of external data sources  
 
 Deliverables:
 
@@ -331,7 +352,7 @@ Building a Machine Learning Pipeline
 
 ---
 
-# Phase 7 — Time Series Modeling (Weeks 20–22)
+# Phase 7 — Time Series Modeling (Weeks 9)
 
 Goal: Work with financial data.
 
@@ -349,6 +370,23 @@ Create time series features:
 
 Train prediction models.
 
+### AWS Integration (Automation)
+
+Automate data collection and processing.
+
+Tasks:
+
+• Use EC2 (Elastic Compute Cloud) to run scheduled data collection scripts  
+OR  
+• Use Lambda (serverless functions) for lightweight automation  
+• Schedule jobs using cron or CloudWatch  
+
+Purpose:
+
+• Introduces automation and scheduling  
+• Demonstrates real-time or periodic data pipelines  
+• Shows transition from manual to production workflows  
+
 Deliverables:
 
 projects/06-time-series-model
@@ -359,7 +397,7 @@ Machine Learning for Stock Market Prediction
 
 ---
 
-# Phase 8 — Web-Based ML Trading System (Weeks 23–25)
+# Phase 8 — Web-Based ML Trading System (Weeks 10-12)
 
 Goal: Build a full machine learning application.
 
@@ -381,6 +419,41 @@ trading-system
 ├── api
 └── dashboard
 
+### Docker Integration (Full System)
+
+Containerize the entire application.
+
+Tasks:
+
+• Create Docker containers for:
+  - Flask API  
+  - ML model service  
+• Use `docker-compose` to run the full system locally  
+• Ensure all services communicate correctly  
+
+Purpose:
+
+• Demonstrates full system containerization  
+• Enables easy deployment  
+• Mirrors real-world microservice architecture  
+
+### AWS Integration (Production Deployment)
+
+Deploy your application to the cloud.
+
+Tasks:
+
+• Launch an EC2 instance to host your application  
+• Deploy your Docker containers on EC2  
+• Store datasets and models in S3  
+• (Optional) Use RDS (Relational Database Service) for structured data  
+
+Purpose:
+
+• Demonstrates real deployment experience  
+• Shows ability to run ML systems in production  
+• Bridges gap between development and real-world usage  
+
 Deliverables:
 
 projects/07-ml-trading-system
@@ -391,7 +464,7 @@ Building a Machine Learning Trading System
 
 ---
 
-# Phase 9 — Portfolio Completion (Week 26)
+# Phase 9 — Portfolio Completion (Week 12)
 
 Goal: Prepare portfolio for job applications.
 
@@ -405,9 +478,26 @@ Include:
 • architecture diagrams  
 • GitHub links  
 
+### AWS + System Design Documentation
+
+Document your system architecture clearly.
+
+Tasks:
+
+• Create diagrams showing:
+  User → Web App → API (EC2) → Model → S3  
+• Explain how Docker containers interact  
+• Describe data flow and deployment setup  
+
+Purpose:
+
+• Demonstrates system design thinking  
+• Helps recruiters understand your work quickly  
+• Elevates portfolio from code to engineering  
+
 Write final article:
 
-My 26 Week Journey to Becoming a Machine Learning Engineer
+My 12 Week Journey to Becoming a Machine Learning Engineer
 
 Publish final LinkedIn post.
 
@@ -427,13 +517,13 @@ This builds a **public learning record** employers can see.
 
 # Final Portfolio Outcome
 
-At the end of 26 weeks you will have:
+At the end of of this journey I should have:
 
-• 7 machine learning projects  
+• 9 machine learning projects  
 • Kaggle competition experience  
 • Open source contributions  
 • a machine learning trading system  
-• 20+ blog posts  
-• a complete GitHub portfolio
+• 12+ blog posts  
+• a complete GitHub portfolio  
 
-This portfolio demonstrates real Machine Learning Engineering capability.
+This portfolio will demonstrate real Machine Learning Engineering capability.
