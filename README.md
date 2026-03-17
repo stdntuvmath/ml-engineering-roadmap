@@ -86,13 +86,6 @@ projects/00-ai-image-generator
 
 Initialize structure:
 
-ai-image-generator
-│
-├── data
-├── src
-├── output
-└── README.md
-
 Install required libraries:
 
 pip install numpy  
